@@ -20,8 +20,6 @@
 		1898D6E22303C06D00A643D0 /* ListEvent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1898D6E02303C06D00A643D0 /* ListEvent.xib */; };
 		189A993A230CDDF5008E1096 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189A9939230CDDF5008E1096 /* CoreData.framework */; };
 		189F1A7D2302530A00568FDE /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189F1A7C2302530A00568FDE /* CalendarView.swift */; };
-		18A004E3230E708C00D23F9A /* EditEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A004E2230E708C00D23F9A /* EditEventVC.swift */; };
-		18A004E5230E70AA00D23F9A /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A004E4230E70AA00D23F9A /* DetailsVC.swift */; };
 		18AC73C92306B4D300AFB939 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC73C82306B4D300AFB939 /* Event.swift */; };
 		18C863C1230A33E500FBA551 /* MapsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C863C0230A33E500FBA551 /* MapsVC.swift */; };
 		35E96A283C9091195CD4C850 /* Pods_Miagi_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EEF1B5A048E9598B368324 /* Pods_Miagi_Reminder.framework */; };
@@ -65,8 +63,6 @@
 		1898D6E02303C06D00A643D0 /* ListEvent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListEvent.xib; sourceTree = "<group>"; };
 		189A9939230CDDF5008E1096 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		189F1A7C2302530A00568FDE /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		18A004E2230E708C00D23F9A /* EditEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventVC.swift; sourceTree = "<group>"; };
-		18A004E4230E70AA00D23F9A /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		18AC73C82306B4D300AFB939 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		18C863C0230A33E500FBA551 /* MapsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsVC.swift; sourceTree = "<group>"; };
 		1AEAFFAF4007C2ABA57B4928 /* Pods-Miagi-Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Miagi-Reminder.debug.xcconfig"; path = "Target Support Files/Pods-Miagi-Reminder/Pods-Miagi-Reminder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -190,8 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				181C9210230176FD002B6B4A /* NewEventVC.swift */,
-				18A004E2230E708C00D23F9A /* EditEventVC.swift */,
-				18A004E4230E70AA00D23F9A /* DetailsVC.swift */,
 			);
 			path = "Edit-Add-Details";
 			sourceTree = "<group>";
@@ -457,12 +451,10 @@
 				189F1A7D2302530A00568FDE /* CalendarView.swift in Sources */,
 				18C863C1230A33E500FBA551 /* MapsVC.swift in Sources */,
 				18AC73C92306B4D300AFB939 /* Event.swift in Sources */,
-				18A004E3230E708C00D23F9A /* EditEventVC.swift in Sources */,
 				1898D6E12303C06D00A643D0 /* ListEvent.swift in Sources */,
 				39E9B23A2312E5F10024154A /* NotificationManageViewController.swift in Sources */,
 				186847EA230D26D600BE0F8C /* RealmEvent.swift in Sources */,
 				181C9211230176FD002B6B4A /* NewEventVC.swift in Sources */,
-				18A004E5230E70AA00D23F9A /* DetailsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

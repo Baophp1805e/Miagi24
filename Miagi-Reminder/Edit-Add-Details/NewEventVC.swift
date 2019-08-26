@@ -12,9 +12,15 @@ import GoogleMaps
 import RealmSwift
 import UserNotifications
 
+enum UpdateDetails {
+    case eventDetails
+    case eventEdit
+    case addEvent
+}
+
 class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate , GMSMapViewDelegate {
     
-    var appDelegate = UIApplication.shared.delegate as? AppDelegate
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var switch2: UISwitch!
     @IBOutlet weak var switch1: UISwitch!
     @IBOutlet weak var googleMaps: GMSMapView?
@@ -30,6 +36,8 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
     private var datePicker: UIDatePicker!
     @IBOutlet weak var errorLabel: UILabel!
     var addEvent: Event!
+    var eventDetails: Event!
+    var eventEdit: Event!
     
     
     let realm = try! Realm()
@@ -37,7 +45,7 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         //        handlePicker()
-        self.title = "New Event"
+//        self.title = "New Event"
         titleTextField?.delegate = self
         describeTextField?.delegate = self
         mapGoogle()
@@ -46,14 +54,15 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
         currentTime()
         let center = UNUserNotificationCenter.current()
         center.delegate = self
+        detailsEvent()
+        updateEvent()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
         self.navigationItem.setHidesBackButton(true, animated:true)
-        nowSwitch1(switchz: switch1)
-        tenSwitch2(switchs: switch2)
+        
     }
     
     @objc func nowSwitch1(switchz: UISwitch) {
@@ -175,7 +184,14 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
         case .orderedAscending:
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let commentVc = storyBoard.instantiateViewController(withIdentifier: "viewParrent") as! ViewController
-            realmAdd()
+            if let eventEdit = eventEdit {
+                realmUpdate()
+            } else {
+                realmAdd()
+            }
+            
+            nowSwitch1(switchz: switch1)
+            tenSwitch2(switchs: switch2)
             self.navigationController?.pushViewController(commentVc, animated: true)
             print("Date A is earlier than date B")
         case .orderedSame:
@@ -187,6 +203,26 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
             errorLabel.textColor = UIColor.red
             print("The two dates are the same")
         }
+    }
+    
+    func realmUpdate() {
+        guard let title = titleTextField?.text,
+            let describe = describeTextField?.text,
+            let city = cityLabel?.text,
+            let timeFrom = timefromTextField?.text,
+            let timeTo = timetoTextField?.text
+            else { return }
+        let realm = try! Realm()
+        realm.beginWrite()
+        if let eventUpdate = realm.object(ofType: RealmEvent.self, forPrimaryKey: eventEdit!.id) {
+            eventUpdate.title = title
+            eventUpdate.describe = describe
+            eventUpdate.city = city
+            eventUpdate.timeFrom = timeFrom
+            eventUpdate.timeTo = timeTo
+            realm.add(eventUpdate, update: .modified)
+        }
+        try? realm.commitWrite()
     }
     
     func realmAdd() {
@@ -216,6 +252,66 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
     @IBAction func cancelButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    func updateEvent() {
+        if let eventEdit = eventEdit {
+            titleTextField?.text = eventEdit.title
+            describeTextField?.text = eventEdit.describe
+            cityLabel?.text = eventEdit.city
+            timefromTextField?.text = eventEdit.timeFrom
+            timetoTextField?.text = eventEdit.timeTo
+             self.title = "Update Event"
+        } else if let eventDetails = eventDetails {
+             self.title = "Details Event"
+        } else {
+            self.title = "New Event"
+        }
+    }
+    
+    
+    func detailsEvent() {
+        if let eventDetails = eventDetails {
+            titleTextField?.text = eventDetails.title
+            describeTextField?.text = eventDetails.describe
+            cityLabel?.text = eventDetails.city
+            timefromTextField?.text = eventDetails.timeFrom
+            timetoTextField?.text = eventDetails.timeTo
+            saveButton.isEnabled = false
+            saveButton.tintColor = UIColor.clear
+//            self.title = "DetailsEvent"
+        } else {
+            saveButton.isEnabled = true
+//            self.title = "AddEvent"
+        }
+    }
+    
+//    func fetchData() {
+//
+//    }
+    
+    //MARK: fetchDataDetails
+    //    func fetchDataDetails(for updateDetails: UpdateDetails) {
+    //        switch updateDetails {
+    //        case UpdateDetails.eventEdit:
+    //            titleTextField?.text = eventEdit?.title
+    //            describeTextField?.text = eventEdit?.describe
+    //            cityLabel?.text = eventEdit?.city
+    //            timefromTextField?.text = eventEdit?.timeFrom
+    //            timetoTextField?.text = eventEdit?.timeTo
+    //            saveButton.isEnabled = true
+    //        case UpdateDetails.eventDetails:
+    //            titleTextField?.text = eventDetails?.title
+    //            describeTextField?.text = eventDetails?.describe
+    //            cityLabel?.text = eventDetails?.city
+    //            timefromTextField?.text = eventDetails?.timeFrom
+    //            timetoTextField?.text = eventDetails?.timeTo
+    //            saveButton.isEnabled = false
+    //        case .addEvent:
+    //            saveButton.isEnabled = true
+    //        }
+    //
+    //
+    //    }
 }
 
 extension NewEventVC: backNewEvent {

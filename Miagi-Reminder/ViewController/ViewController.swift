@@ -99,7 +99,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = eventList[indexPath.row]
-        
         let currentDate = Date()
         print("Date: \(currentDate)")
         let formatter = DateFormatter()
@@ -111,13 +110,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         print("min: \(min)")
         if currentDate > min {
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let detailsEvent = storyBoard.instantiateViewController(withIdentifier: "detailsEvent") as! DetailsVC
+            let detailsEvent = storyBoard.instantiateViewController(withIdentifier: "newEvent") as! NewEventVC
             detailsEvent.eventDetails = data
             self.navigationController?.pushViewController(detailsEvent, animated: true)
             print("Nho hon")
         } else {
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let editVc = storyBoard.instantiateViewController(withIdentifier: "editEvent") as! EditEventVC
+            let editVc = storyBoard.instantiateViewController(withIdentifier: "newEvent") as! NewEventVC
             editVc.eventEdit = data
             self.navigationController?.pushViewController(editVc, animated: true)
             print("lon hon")
