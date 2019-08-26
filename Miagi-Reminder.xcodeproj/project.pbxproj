@@ -1,0 +1,800 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		181C91E123011BEF002B6B4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C91E023011BEF002B6B4A /* AppDelegate.swift */; };
+		181C91E323011BEF002B6B4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C91E223011BEF002B6B4A /* ViewController.swift */; };
+		181C91E623011BEF002B6B4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181C91E423011BEF002B6B4A /* Main.storyboard */; };
+		181C91E823011BF2002B6B4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181C91E723011BF2002B6B4A /* Assets.xcassets */; };
+		181C91EB23011BF2002B6B4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181C91E923011BF2002B6B4A /* LaunchScreen.storyboard */; };
+		181C91F623011BF2002B6B4A /* Miagi_ReminderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C91F523011BF2002B6B4A /* Miagi_ReminderTests.swift */; };
+		181C920123011BF2002B6B4A /* Miagi_ReminderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C920023011BF2002B6B4A /* Miagi_ReminderUITests.swift */; };
+		181C9211230176FD002B6B4A /* NewEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C9210230176FD002B6B4A /* NewEventVC.swift */; };
+		186847EA230D26D600BE0F8C /* RealmEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186847E9230D26D600BE0F8C /* RealmEvent.swift */; };
+		1898D6E12303C06D00A643D0 /* ListEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1898D6DF2303C06D00A643D0 /* ListEvent.swift */; };
+		1898D6E22303C06D00A643D0 /* ListEvent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1898D6E02303C06D00A643D0 /* ListEvent.xib */; };
+		189A993A230CDDF5008E1096 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189A9939230CDDF5008E1096 /* CoreData.framework */; };
+		189F1A7D2302530A00568FDE /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189F1A7C2302530A00568FDE /* CalendarView.swift */; };
+		18A004E3230E708C00D23F9A /* EditEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A004E2230E708C00D23F9A /* EditEventVC.swift */; };
+		18A004E5230E70AA00D23F9A /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A004E4230E70AA00D23F9A /* DetailsVC.swift */; };
+		18AC73C92306B4D300AFB939 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC73C82306B4D300AFB939 /* Event.swift */; };
+		18C863C1230A33E500FBA551 /* MapsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C863C0230A33E500FBA551 /* MapsVC.swift */; };
+		35E96A283C9091195CD4C850 /* Pods_Miagi_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EEF1B5A048E9598B368324 /* Pods_Miagi_Reminder.framework */; };
+		39E9B23A2312E5F10024154A /* NotificationManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E9B2392312E5F10024154A /* NotificationManageViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		181C91F223011BF2002B6B4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 181C91D523011BEF002B6B4A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 181C91DC23011BEF002B6B4A;
+			remoteInfo = "Miagi-Reminder";
+		};
+		181C91FD23011BF2002B6B4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 181C91D523011BEF002B6B4A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 181C91DC23011BEF002B6B4A;
+			remoteInfo = "Miagi-Reminder";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		181C91DD23011BEF002B6B4A /* Miagi-Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Miagi-Reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		181C91E023011BEF002B6B4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		181C91E223011BEF002B6B4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		181C91E523011BEF002B6B4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		181C91E723011BF2002B6B4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		181C91EA23011BF2002B6B4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		181C91EC23011BF2002B6B4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		181C91F123011BF2002B6B4A /* Miagi-ReminderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Miagi-ReminderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		181C91F523011BF2002B6B4A /* Miagi_ReminderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miagi_ReminderTests.swift; sourceTree = "<group>"; };
+		181C91F723011BF2002B6B4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		181C91FC23011BF2002B6B4A /* Miagi-ReminderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Miagi-ReminderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		181C920023011BF2002B6B4A /* Miagi_ReminderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miagi_ReminderUITests.swift; sourceTree = "<group>"; };
+		181C920223011BF2002B6B4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		181C9210230176FD002B6B4A /* NewEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventVC.swift; sourceTree = "<group>"; };
+		186847E9230D26D600BE0F8C /* RealmEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmEvent.swift; sourceTree = "<group>"; };
+		1898D6DF2303C06D00A643D0 /* ListEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEvent.swift; sourceTree = "<group>"; };
+		1898D6E02303C06D00A643D0 /* ListEvent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListEvent.xib; sourceTree = "<group>"; };
+		189A9939230CDDF5008E1096 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		189F1A7C2302530A00568FDE /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		18A004E2230E708C00D23F9A /* EditEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventVC.swift; sourceTree = "<group>"; };
+		18A004E4230E70AA00D23F9A /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
+		18AC73C82306B4D300AFB939 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		18C863C0230A33E500FBA551 /* MapsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsVC.swift; sourceTree = "<group>"; };
+		1AEAFFAF4007C2ABA57B4928 /* Pods-Miagi-Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Miagi-Reminder.debug.xcconfig"; path = "Target Support Files/Pods-Miagi-Reminder/Pods-Miagi-Reminder.debug.xcconfig"; sourceTree = "<group>"; };
+		39E9B2392312E5F10024154A /* NotificationManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManageViewController.swift; sourceTree = "<group>"; };
+		7EF2F30C29E21533F50E85FD /* Pods-Miagi-Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Miagi-Reminder.release.xcconfig"; path = "Target Support Files/Pods-Miagi-Reminder/Pods-Miagi-Reminder.release.xcconfig"; sourceTree = "<group>"; };
+		A8EEF1B5A048E9598B368324 /* Pods_Miagi_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Miagi_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		181C91DA23011BEF002B6B4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				189A993A230CDDF5008E1096 /* CoreData.framework in Frameworks */,
+				35E96A283C9091195CD4C850 /* Pods_Miagi_Reminder.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		181C91EE23011BF2002B6B4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		181C91F923011BF2002B6B4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		181C91D423011BEF002B6B4A = {
+			isa = PBXGroup;
+			children = (
+				181C91DF23011BEF002B6B4A /* Miagi-Reminder */,
+				181C91F423011BF2002B6B4A /* Miagi-ReminderTests */,
+				181C91FF23011BF2002B6B4A /* Miagi-ReminderUITests */,
+				181C91DE23011BEF002B6B4A /* Products */,
+				989954F8DD022B8C044ED347 /* Pods */,
+				791E4A49DB109E7471D6C99D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		181C91DE23011BEF002B6B4A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				181C91DD23011BEF002B6B4A /* Miagi-Reminder.app */,
+				181C91F123011BF2002B6B4A /* Miagi-ReminderTests.xctest */,
+				181C91FC23011BF2002B6B4A /* Miagi-ReminderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		181C91DF23011BEF002B6B4A /* Miagi-Reminder */ = {
+			isa = PBXGroup;
+			children = (
+				181C91E023011BEF002B6B4A /* AppDelegate.swift */,
+				39E9B2382312E5C90024154A /* LocalNotification */,
+				1898D6DE2303C03100A643D0 /* Cell */,
+				1896B07A23055FEE00E2FE23 /* Maps */,
+				18AC73C72306B4BB00AFB939 /* Models */,
+				186847E8230D26AE00BE0F8C /* ModelRealm */,
+				18A004E0230E702C00D23F9A /* Edit-Add-Details */,
+				18A004E1230E705B00D23F9A /* ViewController */,
+				181C91E423011BEF002B6B4A /* Main.storyboard */,
+				181C91E723011BF2002B6B4A /* Assets.xcassets */,
+				181C91E923011BF2002B6B4A /* LaunchScreen.storyboard */,
+				181C91EC23011BF2002B6B4A /* Info.plist */,
+			);
+			path = "Miagi-Reminder";
+			sourceTree = "<group>";
+		};
+		181C91F423011BF2002B6B4A /* Miagi-ReminderTests */ = {
+			isa = PBXGroup;
+			children = (
+				181C91F523011BF2002B6B4A /* Miagi_ReminderTests.swift */,
+				181C91F723011BF2002B6B4A /* Info.plist */,
+			);
+			path = "Miagi-ReminderTests";
+			sourceTree = "<group>";
+		};
+		181C91FF23011BF2002B6B4A /* Miagi-ReminderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				181C920023011BF2002B6B4A /* Miagi_ReminderUITests.swift */,
+				181C920223011BF2002B6B4A /* Info.plist */,
+			);
+			path = "Miagi-ReminderUITests";
+			sourceTree = "<group>";
+		};
+		186847E8230D26AE00BE0F8C /* ModelRealm */ = {
+			isa = PBXGroup;
+			children = (
+				186847E9230D26D600BE0F8C /* RealmEvent.swift */,
+			);
+			path = ModelRealm;
+			sourceTree = "<group>";
+		};
+		1896B07A23055FEE00E2FE23 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				18C863C0230A33E500FBA551 /* MapsVC.swift */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
+		1898D6DE2303C03100A643D0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1898D6DF2303C06D00A643D0 /* ListEvent.swift */,
+				1898D6E02303C06D00A643D0 /* ListEvent.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		18A004E0230E702C00D23F9A /* Edit-Add-Details */ = {
+			isa = PBXGroup;
+			children = (
+				181C9210230176FD002B6B4A /* NewEventVC.swift */,
+				18A004E2230E708C00D23F9A /* EditEventVC.swift */,
+				18A004E4230E70AA00D23F9A /* DetailsVC.swift */,
+			);
+			path = "Edit-Add-Details";
+			sourceTree = "<group>";
+		};
+		18A004E1230E705B00D23F9A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				181C91E223011BEF002B6B4A /* ViewController.swift */,
+				189F1A7C2302530A00568FDE /* CalendarView.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		18AC73C72306B4BB00AFB939 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				18AC73C82306B4D300AFB939 /* Event.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		39E9B2382312E5C90024154A /* LocalNotification */ = {
+			isa = PBXGroup;
+			children = (
+				39E9B2392312E5F10024154A /* NotificationManageViewController.swift */,
+			);
+			path = LocalNotification;
+			sourceTree = "<group>";
+		};
+		791E4A49DB109E7471D6C99D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				189A9939230CDDF5008E1096 /* CoreData.framework */,
+				A8EEF1B5A048E9598B368324 /* Pods_Miagi_Reminder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		989954F8DD022B8C044ED347 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1AEAFFAF4007C2ABA57B4928 /* Pods-Miagi-Reminder.debug.xcconfig */,
+				7EF2F30C29E21533F50E85FD /* Pods-Miagi-Reminder.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		181C91DC23011BEF002B6B4A /* Miagi-Reminder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 181C920523011BF2002B6B4A /* Build configuration list for PBXNativeTarget "Miagi-Reminder" */;
+			buildPhases = (
+				63E19F55774A5C5E9C5A759C /* [CP] Check Pods Manifest.lock */,
+				181C91D923011BEF002B6B4A /* Sources */,
+				181C91DA23011BEF002B6B4A /* Frameworks */,
+				181C91DB23011BEF002B6B4A /* Resources */,
+				13E683C15699298ABC8BB2FA /* [CP] Embed Pods Frameworks */,
+				8866E5B6A5A3CD891B836F4C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Miagi-Reminder";
+			productName = "Miagi-Reminder";
+			productReference = 181C91DD23011BEF002B6B4A /* Miagi-Reminder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		181C91F023011BF2002B6B4A /* Miagi-ReminderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 181C920823011BF2002B6B4A /* Build configuration list for PBXNativeTarget "Miagi-ReminderTests" */;
+			buildPhases = (
+				181C91ED23011BF2002B6B4A /* Sources */,
+				181C91EE23011BF2002B6B4A /* Frameworks */,
+				181C91EF23011BF2002B6B4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				181C91F323011BF2002B6B4A /* PBXTargetDependency */,
+			);
+			name = "Miagi-ReminderTests";
+			productName = "Miagi-ReminderTests";
+			productReference = 181C91F123011BF2002B6B4A /* Miagi-ReminderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		181C91FB23011BF2002B6B4A /* Miagi-ReminderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 181C920B23011BF2002B6B4A /* Build configuration list for PBXNativeTarget "Miagi-ReminderUITests" */;
+			buildPhases = (
+				181C91F823011BF2002B6B4A /* Sources */,
+				181C91F923011BF2002B6B4A /* Frameworks */,
+				181C91FA23011BF2002B6B4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				181C91FE23011BF2002B6B4A /* PBXTargetDependency */,
+			);
+			name = "Miagi-ReminderUITests";
+			productName = "Miagi-ReminderUITests";
+			productReference = 181C91FC23011BF2002B6B4A /* Miagi-ReminderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		181C91D523011BEF002B6B4A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = apple;
+				TargetAttributes = {
+					181C91DC23011BEF002B6B4A = {
+						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					181C91F023011BF2002B6B4A = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 181C91DC23011BEF002B6B4A;
+					};
+					181C91FB23011BF2002B6B4A = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 181C91DC23011BEF002B6B4A;
+					};
+				};
+			};
+			buildConfigurationList = 181C91D823011BEF002B6B4A /* Build configuration list for PBXProject "Miagi-Reminder" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 181C91D423011BEF002B6B4A;
+			productRefGroup = 181C91DE23011BEF002B6B4A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				181C91DC23011BEF002B6B4A /* Miagi-Reminder */,
+				181C91F023011BF2002B6B4A /* Miagi-ReminderTests */,
+				181C91FB23011BF2002B6B4A /* Miagi-ReminderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		181C91DB23011BEF002B6B4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1898D6E22303C06D00A643D0 /* ListEvent.xib in Resources */,
+				181C91EB23011BF2002B6B4A /* LaunchScreen.storyboard in Resources */,
+				181C91E823011BF2002B6B4A /* Assets.xcassets in Resources */,
+				181C91E623011BEF002B6B4A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		181C91EF23011BF2002B6B4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		181C91FA23011BF2002B6B4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13E683C15699298ABC8BB2FA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Miagi-Reminder/Pods-Miagi-Reminder-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Miagi-Reminder/Pods-Miagi-Reminder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63E19F55774A5C5E9C5A759C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Miagi-Reminder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8866E5B6A5A3CD891B836F4C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Miagi-Reminder/Pods-Miagi-Reminder-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Miagi-Reminder/Pods-Miagi-Reminder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		181C91D923011BEF002B6B4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				181C91E323011BEF002B6B4A /* ViewController.swift in Sources */,
+				181C91E123011BEF002B6B4A /* AppDelegate.swift in Sources */,
+				189F1A7D2302530A00568FDE /* CalendarView.swift in Sources */,
+				18C863C1230A33E500FBA551 /* MapsVC.swift in Sources */,
+				18AC73C92306B4D300AFB939 /* Event.swift in Sources */,
+				18A004E3230E708C00D23F9A /* EditEventVC.swift in Sources */,
+				1898D6E12303C06D00A643D0 /* ListEvent.swift in Sources */,
+				39E9B23A2312E5F10024154A /* NotificationManageViewController.swift in Sources */,
+				186847EA230D26D600BE0F8C /* RealmEvent.swift in Sources */,
+				181C9211230176FD002B6B4A /* NewEventVC.swift in Sources */,
+				18A004E5230E70AA00D23F9A /* DetailsVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		181C91ED23011BF2002B6B4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				181C91F623011BF2002B6B4A /* Miagi_ReminderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		181C91F823011BF2002B6B4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				181C920123011BF2002B6B4A /* Miagi_ReminderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		181C91F323011BF2002B6B4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 181C91DC23011BEF002B6B4A /* Miagi-Reminder */;
+			targetProxy = 181C91F223011BF2002B6B4A /* PBXContainerItemProxy */;
+		};
+		181C91FE23011BF2002B6B4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 181C91DC23011BEF002B6B4A /* Miagi-Reminder */;
+			targetProxy = 181C91FD23011BF2002B6B4A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		181C91E423011BEF002B6B4A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				181C91E523011BEF002B6B4A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		181C91E923011BF2002B6B4A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				181C91EA23011BF2002B6B4A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		181C920323011BF2002B6B4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		181C920423011BF2002B6B4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		181C920623011BF2002B6B4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AEAFFAF4007C2ABA57B4928 /* Pods-Miagi-Reminder.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XG6J99B6RT;
+				INFOPLIST_FILE = "Miagi-Reminder/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.balitax.Auto-Complete";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		181C920723011BF2002B6B4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EF2F30C29E21533F50E85FD /* Pods-Miagi-Reminder.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XG6J99B6RT;
+				INFOPLIST_FILE = "Miagi-Reminder/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.balitax.Auto-Complete";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		181C920923011BF2002B6B4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XG6J99B6RT;
+				INFOPLIST_FILE = "Miagi-ReminderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Reminder-Calender.Miagi-ReminderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Miagi-Reminder.app/Miagi-Reminder";
+			};
+			name = Debug;
+		};
+		181C920A23011BF2002B6B4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XG6J99B6RT;
+				INFOPLIST_FILE = "Miagi-ReminderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Reminder-Calender.Miagi-ReminderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Miagi-Reminder.app/Miagi-Reminder";
+			};
+			name = Release;
+		};
+		181C920C23011BF2002B6B4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XG6J99B6RT;
+				INFOPLIST_FILE = "Miagi-ReminderUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Reminder-Calender.Miagi-ReminderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Miagi-Reminder";
+			};
+			name = Debug;
+		};
+		181C920D23011BF2002B6B4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XG6J99B6RT;
+				INFOPLIST_FILE = "Miagi-ReminderUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Reminder-Calender.Miagi-ReminderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Miagi-Reminder";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		181C91D823011BEF002B6B4A /* Build configuration list for PBXProject "Miagi-Reminder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				181C920323011BF2002B6B4A /* Debug */,
+				181C920423011BF2002B6B4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		181C920523011BF2002B6B4A /* Build configuration list for PBXNativeTarget "Miagi-Reminder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				181C920623011BF2002B6B4A /* Debug */,
+				181C920723011BF2002B6B4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		181C920823011BF2002B6B4A /* Build configuration list for PBXNativeTarget "Miagi-ReminderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				181C920923011BF2002B6B4A /* Debug */,
+				181C920A23011BF2002B6B4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		181C920B23011BF2002B6B4A /* Build configuration list for PBXNativeTarget "Miagi-ReminderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				181C920C23011BF2002B6B4A /* Debug */,
+				181C920D23011BF2002B6B4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 181C91D523011BEF002B6B4A /* Project object */;
+}
