@@ -38,7 +38,6 @@ class EditEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDeleg
         titleTextField.delegate = self
         describeTextField.delegate = self
         cityTextField.delegate = self
-//        mapView.delegate = self
     }
     @IBAction func doneButton(_ sender: Any) {
         let formatter = DateFormatter()
@@ -50,29 +49,7 @@ class EditEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDeleg
         case .orderedAscending:
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let commentVc = storyBoard.instantiateViewController(withIdentifier: "viewParrent") as! ViewController
-            
-            guard let title = titleTextField?.text,
-                let describe = describeTextField?.text,
-                let city = cityTextField?.text,
-                let timeFrom = timeFromTF?.text,
-                let timeTo = timeToTF?.text
-                else { return }
-            
-            //            let id = 0
-            let realm = try! Realm()
-            //            let realmEvent = RealmEvent()
-            realm.beginWrite()
-            if let eventUpdate = realm.object(ofType: RealmEvent.self, forPrimaryKey: eventEdit!.id) {
-                
-                eventUpdate.title = title
-                eventUpdate.describe = describe
-                eventUpdate.city = city
-                eventUpdate.timeFrom = timeFrom
-                eventUpdate.timeTo = timeTo
-                realm.add(eventUpdate, update: .modified)
-            }
-            
-            try? realm.commitWrite()
+            updateRealm()
             self.navigationController?.pushViewController(commentVc, animated: true)
             print("Date A is earlier than date B")
         case .orderedSame:
@@ -84,6 +61,28 @@ class EditEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDeleg
             errorLabel.textColor = UIColor.red
             print("The two dates are the same")
         }
+    }
+    
+    func updateRealm() {
+        guard let title = titleTextField?.text,
+            let describe = describeTextField?.text,
+            let city = cityTextField?.text,
+            let timeFrom = timeFromTF?.text,
+            let timeTo = timeToTF?.text
+            else { return }
+        let realm = try! Realm()
+        realm.beginWrite()
+        if let eventUpdate = realm.object(ofType: RealmEvent.self, forPrimaryKey: eventEdit!.id) {
+            
+            eventUpdate.title = title
+            eventUpdate.describe = describe
+            eventUpdate.city = city
+            eventUpdate.timeFrom = timeFrom
+            eventUpdate.timeTo = timeTo
+            realm.add(eventUpdate, update: .modified)
+        }
+        
+        try? realm.commitWrite()
     }
     
     @IBAction func cancelButton(_ sender: Any) {

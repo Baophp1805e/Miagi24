@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L9D-Uh-Msp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L9D-Uh-Msp">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -319,14 +319,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cityLabel" destination="jnh-3Y-b4g" id="XZG-S2-v4H"/>
+                        <outlet property="describeTextField" destination="3Gv-oj-ruV" id="sOQ-OX-YVR"/>
                         <outlet property="errorLabel" destination="QpR-PV-niN" id="7pi-EG-hRM"/>
                         <outlet property="googleMaps" destination="H4v-sU-jqS" id="FwR-7b-QGq"/>
                         <outlet property="switch1" destination="VTs-Tx-ABI" id="jtM-BV-8GI"/>
                         <outlet property="switch2" destination="cqQ-vi-Csd" id="XUF-cq-n8k"/>
-                        <outlet property="txtDatePickerDen" destination="J2m-UU-Elq" id="Ges-07-BHW"/>
-                        <outlet property="txtDatePickerFrom" destination="LW7-R7-kLY" id="OjV-Wl-Lb2"/>
-                        <outlet property="txtDescribe" destination="3Gv-oj-ruV" id="pwb-OR-eCR"/>
-                        <outlet property="txtTitle" destination="B39-q5-2QF" id="hzz-8e-bJR"/>
+                        <outlet property="timefromTextField" destination="LW7-R7-kLY" id="ZbX-50-q1G"/>
+                        <outlet property="timetoTextField" destination="J2m-UU-Elq" id="Y96-Qy-1pm"/>
+                        <outlet property="titleTextField" destination="B39-q5-2QF" id="uXl-zU-lNR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xi9-XX-wJa" userLabel="First Responder" sceneMemberID="firstResponder"/>

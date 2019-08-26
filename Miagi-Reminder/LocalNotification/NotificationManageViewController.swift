@@ -19,7 +19,6 @@ final class NotificationManager: NSObject {
     }
     @available(iOS 10.0, *)
     private func registerDelegate() {
-//        let center = UNUserNotificationCenter.current()
         center.delegate = self
     }
     

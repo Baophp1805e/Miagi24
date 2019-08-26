@@ -14,18 +14,15 @@ import UserNotifications
 
 class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate , GMSMapViewDelegate {
     
-    //    var switchState = true
-    //    let switchKey = "switchState"
-    
     var appDelegate = UIApplication.shared.delegate as? AppDelegate
     @IBOutlet weak var switch2: UISwitch!
     @IBOutlet weak var switch1: UISwitch!
     @IBOutlet weak var googleMaps: GMSMapView?
     var locationManager = CLLocationManager()
-    @IBOutlet weak var txtDatePickerDen: UITextField!
-    @IBOutlet weak var txtTitle: UITextField!
-    @IBOutlet weak var txtDescribe: UITextField!
-    @IBOutlet weak var txtDatePickerFrom: UITextField!
+    @IBOutlet weak var timetoTextField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var describeTextField: UITextField!
+    @IBOutlet weak var timefromTextField: UITextField!
     var parrentVC: ViewController!
     var eventList:[Event] = []
     var strCityMaps: String?
@@ -41,8 +38,8 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
         super.viewDidLoad()
         //        handlePicker()
         self.title = "New Event"
-        txtTitle?.delegate = self
-        txtDescribe?.delegate = self
+        titleTextField?.delegate = self
+        describeTextField?.delegate = self
         mapGoogle()
         showDatePicker()
         googleMaps?.delegate = self
@@ -55,9 +52,6 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
         
         super.viewWillAppear(animated)
         self.navigationItem.setHidesBackButton(true, animated:true)
-//        NotificationManager.shared.scheduleNotification(title: (txtTitle?.text)!, body: (txtDatePickerFrom?.text)!, time: datePicker.date )
-//        scheduleNotification()
-//        scheduleNotifications()
         nowSwitch1(switchz: switch1)
         tenSwitch2(switchs: switch2)
     }
@@ -67,8 +61,8 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
         if switchz.isOn {
             print("On")
             defaults.set(true, forKey: "SwitchState")
-//            NotificationManager.shared.scheduleNotification(title: (txtTitle?.text)!, body: (txtDatePickerFrom?.text)!, time: datePicker.date)
-            scheduleNotification()
+            NotificationManager.shared.scheduleNotification(title: (titleTextField?.text)!, body: (timefromTextField?.text)!, time: datePicker.date)
+            //            scheduleNotification()
             UserDefaults.standard.synchronize()
         } else {
             print("Off")
@@ -84,8 +78,8 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
         if switch2.isOn {
             print("On")
             defaults.set(true, forKey: "SwitchStates")
-//            NotificationManager.shared.scheduleNotifications(title: (txtTitle?.text)!, body: (txtDatePickerFrom?.text)!, time: datePicker.date)
-            scheduleNotifications()
+            NotificationManager.shared.scheduleNotifications(title: (titleTextField?.text)!, body: (timefromTextField?.text)!, time: datePicker.date)
+            //            scheduleNotifications()
         } else {
             print("Off")
             defaults.set(false, forKey: "SwitchStates")
@@ -111,10 +105,10 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
         toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
-        txtDatePickerFrom.inputAccessoryView = toolbar
-        txtDatePickerDen.inputAccessoryView = toolbar
-        txtDatePickerFrom.inputView = datePicker
-        txtDatePickerDen.inputView = datePicker
+        timefromTextField.inputAccessoryView = toolbar
+        timetoTextField.inputAccessoryView = toolbar
+        timefromTextField.inputView = datePicker
+        timetoTextField.inputView = datePicker
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -132,8 +126,8 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
         let yourDate = formatter.date(from: myString)
         // again convert your date to string
         let myStringafd = formatter.string(from: yourDate!)
-        txtDatePickerFrom.text = myStringafd
-        txtDatePickerDen.text = myStringafd
+        timefromTextField.text = myStringafd
+        timetoTextField.text = myStringafd
     }
     
     
@@ -141,10 +135,10 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy HH:mm"
         let strDate = formatter.string(from: datePicker.date)
-        if txtDatePickerFrom.isFirstResponder {
-            txtDatePickerFrom.text = strDate
+        if timefromTextField.isFirstResponder {
+            timefromTextField.text = strDate
         } else {
-            txtDatePickerDen.text = strDate
+            timetoTextField.text = strDate
         }
         self.view.endEditing(true)
     }
@@ -173,41 +167,16 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
     @IBAction func btnSave(_ sender: Any) {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy HH:mm"
-        let minDate:Date? = formatter.date(from: txtDatePickerFrom.text!)
-        let maxDate:Date? = formatter.date(from: txtDatePickerDen.text!)
+        let minDate:Date? = formatter.date(from: timefromTextField.text!)
+        let maxDate:Date? = formatter.date(from: timetoTextField.text!)
         
         switch minDate!.compare(maxDate!) {
             
         case .orderedAscending:
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let commentVc = storyBoard.instantiateViewController(withIdentifier: "viewParrent") as! ViewController
-            
-            guard let title = txtTitle?.text,
-                let describe = txtDescribe?.text,
-                let city = cityLabel?.text,
-                let timeFrom = txtDatePickerFrom?.text,
-                let timeTo = txtDatePickerDen?.text
-                else { return }
-            
-            let idEvent = "idEvent"
-            let currentId = UserDefaults.standard.value(forKey: idEvent) as? Int ?? 0
-            let realm = try! Realm()
-            realm.beginWrite()
-            
-            let event = RealmEvent()
-            event.id = currentId
-            event.title = title
-            event.describe = describe
-            event.city = city
-            event.timeFrom = timeFrom
-            event.timeTo = timeTo
-            realm.add(event)
-            UserDefaults.standard.set(currentId + 1, forKey: idEvent)
-            try? realm.commitWrite()
+            realmAdd()
             self.navigationController?.pushViewController(commentVc, animated: true)
-//            NotificationManager.shared.scheduleNotification(title: (txtTitle?.text)!, body: (txtDatePickerFrom?.text)!, time: datePicker.date)
-//            scheduleNotification()
-//            scheduleNotifications()
             print("Date A is earlier than date B")
         case .orderedSame:
             errorLabel.text = "Wrong Time, Try Again!!!"
@@ -220,46 +189,33 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
         }
     }
     
-    func scheduleNotification() {
-            print("enable")
-            let content = UNMutableNotificationContent()
-            content.title = (txtTitle?.text)!
-            content.body = (txtDatePickerFrom?.text)!
-            content.sound = UNNotificationSound.default
-            content.badge = 1
-            let identifier = "LocalNotification"
-//            .addingTimeInterval(-1.0 * 60.0)
-            let selectedTime = datePicker.date
-            let triggerTime = Calendar.current.dateComponents([.hour, .minute], from: selectedTime)
-            let trigger = UNCalendarNotificationTrigger(dateMatching: triggerTime, repeats: true)
-
-            let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-
-            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-    }
-    
-    func scheduleNotifications() {
-        print("enable")
-        let content = UNMutableNotificationContent()
-        content.title = (txtTitle?.text)!
-        content.body = (txtDatePickerFrom?.text)!
-        content.sound = UNNotificationSound.default
-        content.badge = 1
-        let identifier = "LocalNotifications"
-        let selectedTime = datePicker.date.addingTimeInterval(-1.0 * 60.0)
-        let triggerTime = Calendar.current.dateComponents([.hour, .minute], from: selectedTime)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerTime, repeats: true)
+    func realmAdd() {
+        guard let title = titleTextField?.text,
+            let describe = describeTextField?.text,
+            let city = cityLabel?.text,
+            let timeFrom = timefromTextField?.text,
+            let timeTo = timetoTextField?.text
+            else { return }
+        let idEvent = "idEvent"
+        let currentId = UserDefaults.standard.value(forKey: idEvent) as? Int ?? 0
+        let realm = try! Realm()
+        realm.beginWrite()
         
-        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        let event = RealmEvent()
+        event.id = currentId
+        event.title = title
+        event.describe = describe
+        event.city = city
+        event.timeFrom = timeFrom
+        event.timeTo = timeTo
+        realm.add(event)
+        UserDefaults.standard.set(currentId + 1, forKey: idEvent)
+        try? realm.commitWrite()
     }
     
     @IBAction func cancelButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
-    
 }
 
 extension NewEventVC: backNewEvent {
@@ -274,7 +230,7 @@ extension NewEventVC: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-
+        
         completionHandler([.alert, .sound])
     }
 }
