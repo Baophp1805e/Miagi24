@@ -9,8 +9,9 @@
 import UIKit
 import RealmSwift
 import UserNotifications
+import NVActivityIndicatorView
 
-class ViewController: UIViewController, UIGestureRecognizerDelegate{
+class ViewController: UIViewController, UIGestureRecognizerDelegate, NVActivityIndicatorViewable{
     
     @IBOutlet weak var selectedDateLabel: UILabel!
     @IBOutlet weak var viewCalendar: CalendarView!
@@ -137,6 +138,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
         DispatchQueue.main.async{
             self.tableView.reloadSections(IndexSet(integersIn: 0...0), with: UITableView.RowAnimation.top)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if tableView.isDragging {
+            cell.transform = CGAffineTransform.init(scaleX: 0.5, y: 0.5)
+            UIView.animate(withDuration: 0.3, animations: {
+                cell.transform = CGAffineTransform.identity
+            })
         }
     }
     

@@ -12,14 +12,23 @@ import GoogleMaps
 import RealmSwift
 import UserNotifications
 
-enum UpdateDetails {
-    case eventDetails
-    case eventEdit
-    case addEvent
-}
+//enum UpdateDetails {
+//    case eventDetails
+//    case eventEdit
+//    case addEvent
+//}
 
-class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate , GMSMapViewDelegate {
+class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate , GMSMapViewDelegate, UIScrollViewDelegate{
     
+    @IBOutlet weak var informLabel: UILabel!
+    @IBOutlet weak var timeToLabel: UILabel!
+    
+    @IBOutlet weak var namecityLabel: UILabel!
+    @IBOutlet weak var beforeinformLabel: UILabel!
+    @IBOutlet weak var timeFromLabel: UILabel!
+    @IBOutlet weak var describeLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var switch2: UISwitch!
     @IBOutlet weak var switch1: UISwitch!
@@ -44,22 +53,23 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        handlePicker()
-//        self.title = "New Event"
+        
+//        timetoTextField.delegate = self
+//        timefromTextField.delegate = self
         titleTextField?.delegate = self
         describeTextField?.delegate = self
         mapGoogle()
         showDatePicker()
         googleMaps?.delegate = self
         currentTime()
-        let center = UNUserNotificationCenter.current()
-        center.delegate = self
-        detailsEvent()
-        updateEvent()
+        updateDetails()
+        self.setNotificationKeyboard()
+        scrollView.delegate = self
+        customTextField()
+        customLable()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         super.viewWillAppear(animated)
         self.navigationItem.setHidesBackButton(true, animated:true)
         
@@ -71,7 +81,6 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
             print("On")
             defaults.set(true, forKey: "SwitchState")
             NotificationManager.shared.scheduleNotification(title: (titleTextField?.text)!, body: (timefromTextField?.text)!, time: datePicker.date)
-            //            scheduleNotification()
             UserDefaults.standard.synchronize()
         } else {
             print("Off")
@@ -88,13 +97,11 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
             print("On")
             defaults.set(true, forKey: "SwitchStates")
             NotificationManager.shared.scheduleNotifications(title: (titleTextField?.text)!, body: (timefromTextField?.text)!, time: datePicker.date)
-            //            scheduleNotifications()
         } else {
             print("Off")
             defaults.set(false, forKey: "SwitchStates")
             NotificationManager.shared.center.removePendingNotificationRequests(withIdentifiers: ["LocalNotifications"])
         }
-        
     }
     
     @IBAction func switch1Button(_ sender: Any) {
@@ -120,20 +127,11 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
         timetoTextField.inputView = datePicker
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
     func currentTime(){
         let formatter = DateFormatter()
-        // initially set the format based on your datepicker date / server String
         formatter.dateFormat = "dd-MM-yyyy HH:mm"
-        
         let myString = formatter.string(from: Date()) // string purpose I add here
-        // convert your string to date
         let yourDate = formatter.date(from: myString)
-        // again convert your date to string
         let myStringafd = formatter.string(from: yourDate!)
         timefromTextField.text = myStringafd
         timetoTextField.text = myStringafd
@@ -180,16 +178,14 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
         let maxDate:Date? = formatter.date(from: timetoTextField.text!)
         
         switch minDate!.compare(maxDate!) {
-            
         case .orderedAscending:
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let commentVc = storyBoard.instantiateViewController(withIdentifier: "viewParrent") as! ViewController
-            if let eventEdit = eventEdit {
+            if let e = eventEdit {
                 realmUpdate()
             } else {
                 realmAdd()
             }
-            
             nowSwitch1(switchz: switch1)
             tenSwitch2(switchs: switch2)
             self.navigationController?.pushViewController(commentVc, animated: true)
@@ -253,24 +249,15 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
         self.navigationController?.popViewController(animated: true)
     }
     
-    func updateEvent() {
+    func updateDetails() {
         if let eventEdit = eventEdit {
             titleTextField?.text = eventEdit.title
             describeTextField?.text = eventEdit.describe
             cityLabel?.text = eventEdit.city
             timefromTextField?.text = eventEdit.timeFrom
             timetoTextField?.text = eventEdit.timeTo
-             self.title = "Update Event"
+            self.title = "Update Event"
         } else if let eventDetails = eventDetails {
-             self.title = "Details Event"
-        } else {
-            self.title = "New Event"
-        }
-    }
-    
-    
-    func detailsEvent() {
-        if let eventDetails = eventDetails {
             titleTextField?.text = eventDetails.title
             describeTextField?.text = eventDetails.describe
             cityLabel?.text = eventDetails.city
@@ -278,55 +265,78 @@ class NewEventVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
             timetoTextField?.text = eventDetails.timeTo
             saveButton.isEnabled = false
             saveButton.tintColor = UIColor.clear
-//            self.title = "DetailsEvent"
+            self.title = "Details Event"
         } else {
             saveButton.isEnabled = true
-//            self.title = "AddEvent"
+            self.title = "New Event"
         }
     }
     
-//    func fetchData() {
-//
-//    }
+    //MARK: Auto Adjust UIScrollView when keyboard is up
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x != 0 {
+            scrollView.contentOffset.x = 0
+        }
+    }
+    // Notification when keyboard show
+    func setNotificationKeyboard ()  {
+        // setup keyboard event
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
+    }
     
-    //MARK: fetchDataDetails
-    //    func fetchDataDetails(for updateDetails: UpdateDetails) {
-    //        switch updateDetails {
-    //        case UpdateDetails.eventEdit:
-    //            titleTextField?.text = eventEdit?.title
-    //            describeTextField?.text = eventEdit?.describe
-    //            cityLabel?.text = eventEdit?.city
-    //            timefromTextField?.text = eventEdit?.timeFrom
-    //            timetoTextField?.text = eventEdit?.timeTo
-    //            saveButton.isEnabled = true
-    //        case UpdateDetails.eventDetails:
-    //            titleTextField?.text = eventDetails?.title
-    //            describeTextField?.text = eventDetails?.describe
-    //            cityLabel?.text = eventDetails?.city
-    //            timefromTextField?.text = eventDetails?.timeFrom
-    //            timetoTextField?.text = eventDetails?.timeTo
-    //            saveButton.isEnabled = false
-    //        case .addEvent:
-    //            saveButton.isEnabled = true
-    //        }
-    //
-    //
-    //    }
+    @objc func keyboardWillShow(notification:NSNotification){
+        var userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
+        var contentInset:UIEdgeInsets = self.scrollView
+            .contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        scrollView.contentInset = contentInset
+    }
+    
+    @objc func keyboardWillHide(notification:NSNotification){
+        
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Try to find next responder
+        // Try to find next responder
+        if let nextField = textField.superview?.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        
+        return false
+    }
+    
+    func customLable() {
+        titleLabel.makeRoundedLable(radius: 20)
+        describeLabel.makeRoundedLable(radius: 20)
+        timeToLabel.makeRoundedLable(radius: 20)
+        timeFromLabel.makeRoundedLable(radius: 20)
+        informLabel.makeRoundedLable(radius: 20)
+        beforeinformLabel.makeRoundedLable(radius: 20)
+        namecityLabel.makeRoundedLable(radius: 20)
+    }
+    
+    func customTextField() {
+        titleTextField.customBorder(radius: 20)
+        describeTextField.customBorder(radius: 20)
+        timefromTextField.customBorder(radius: 20)
+        timetoTextField.customBorder(radius: 20)
+    }
+    
 }
 
 extension NewEventVC: backNewEvent {
     func passData(text: String) {
         cityLabel.text = text
     }
-    
-    
 }
 
-extension NewEventVC: UNUserNotificationCenterDelegate {
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        
-        completionHandler([.alert, .sound])
-    }
-}

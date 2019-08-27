@@ -17,14 +17,15 @@ final class NotificationManager: NSObject {
     private override init() {
         super.init()
     }
-    @available(iOS 10.0, *)
-    private func registerDelegate() {
-        center.delegate = self
-    }
-    
+//    @available(iOS 10.0, *)
+//    private func registerDelegate() {
+//        center.delegate = self
+//    }
+//
     
     func scheduleNotification(title: String, body: String, time: Date) {
         print("enable")
+        center.delegate = self
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
@@ -43,6 +44,7 @@ final class NotificationManager: NSObject {
     
     
     func scheduleNotifications(title: String, body: String, time: Date) {
+        center.delegate = self
         print("enable")
         let content = UNMutableNotificationContent()
         content.title = title

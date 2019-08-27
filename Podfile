@@ -5,4 +5,5 @@ target 'Miagi-Reminder' do
   pod 'GooglePlaces'
   pod 'GoogleMaps'
   pod 'RealmSwift'
+  pod 'NVActivityIndicatorView'
 end

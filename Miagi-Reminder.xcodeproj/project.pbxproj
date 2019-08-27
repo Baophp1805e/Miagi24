@@ -22,6 +22,7 @@
 		189F1A7D2302530A00568FDE /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189F1A7C2302530A00568FDE /* CalendarView.swift */; };
 		18AC73C92306B4D300AFB939 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC73C82306B4D300AFB939 /* Event.swift */; };
 		18C863C1230A33E500FBA551 /* MapsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C863C0230A33E500FBA551 /* MapsVC.swift */; };
+		18FDBA562314C43E005554C9 /* UpdateDetailsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FDBA552314C43E005554C9 /* UpdateDetailsManager.swift */; };
 		35E96A283C9091195CD4C850 /* Pods_Miagi_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EEF1B5A048E9598B368324 /* Pods_Miagi_Reminder.framework */; };
 		39E9B23A2312E5F10024154A /* NotificationManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E9B2392312E5F10024154A /* NotificationManageViewController.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		189F1A7C2302530A00568FDE /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		18AC73C82306B4D300AFB939 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		18C863C0230A33E500FBA551 /* MapsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsVC.swift; sourceTree = "<group>"; };
+		18FDBA552314C43E005554C9 /* UpdateDetailsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetailsManager.swift; sourceTree = "<group>"; };
 		1AEAFFAF4007C2ABA57B4928 /* Pods-Miagi-Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Miagi-Reminder.debug.xcconfig"; path = "Target Support Files/Pods-Miagi-Reminder/Pods-Miagi-Reminder.debug.xcconfig"; sourceTree = "<group>"; };
 		39E9B2392312E5F10024154A /* NotificationManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManageViewController.swift; sourceTree = "<group>"; };
 		7EF2F30C29E21533F50E85FD /* Pods-Miagi-Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Miagi-Reminder.release.xcconfig"; path = "Target Support Files/Pods-Miagi-Reminder/Pods-Miagi-Reminder.release.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				181C9210230176FD002B6B4A /* NewEventVC.swift */,
+				18FDBA552314C43E005554C9 /* UpdateDetailsManager.swift */,
 			);
 			path = "Edit-Add-Details";
 			sourceTree = "<group>";
@@ -375,18 +378,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Miagi-Reminder/Pods-Miagi-Reminder-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Miagi-Reminder/Pods-Miagi-Reminder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Miagi-Reminder/Pods-Miagi-Reminder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -421,18 +417,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Miagi-Reminder/Pods-Miagi-Reminder-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-Miagi-Reminder/Pods-Miagi-Reminder-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-Miagi-Reminder/Pods-Miagi-Reminder-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -451,6 +440,7 @@
 				189F1A7D2302530A00568FDE /* CalendarView.swift in Sources */,
 				18C863C1230A33E500FBA551 /* MapsVC.swift in Sources */,
 				18AC73C92306B4D300AFB939 /* Event.swift in Sources */,
+				18FDBA562314C43E005554C9 /* UpdateDetailsManager.swift in Sources */,
 				1898D6E12303C06D00A643D0 /* ListEvent.swift in Sources */,
 				39E9B23A2312E5F10024154A /* NotificationManageViewController.swift in Sources */,
 				186847EA230D26D600BE0F8C /* RealmEvent.swift in Sources */,
