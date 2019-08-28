@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,17 +14,17 @@
 		181C91EB23011BF2002B6B4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181C91E923011BF2002B6B4A /* LaunchScreen.storyboard */; };
 		181C91F623011BF2002B6B4A /* Miagi_ReminderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C91F523011BF2002B6B4A /* Miagi_ReminderTests.swift */; };
 		181C920123011BF2002B6B4A /* Miagi_ReminderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C920023011BF2002B6B4A /* Miagi_ReminderUITests.swift */; };
-		181C9211230176FD002B6B4A /* NewEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C9210230176FD002B6B4A /* NewEventVC.swift */; };
+		181C9211230176FD002B6B4A /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C9210230176FD002B6B4A /* AddEventViewController.swift */; };
 		186847EA230D26D600BE0F8C /* RealmEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186847E9230D26D600BE0F8C /* RealmEvent.swift */; };
-		1898D6E12303C06D00A643D0 /* ListEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1898D6DF2303C06D00A643D0 /* ListEvent.swift */; };
-		1898D6E22303C06D00A643D0 /* ListEvent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1898D6E02303C06D00A643D0 /* ListEvent.xib */; };
+		1898D6E12303C06D00A643D0 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1898D6DF2303C06D00A643D0 /* EventTableViewCell.swift */; };
+		1898D6E22303C06D00A643D0 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1898D6E02303C06D00A643D0 /* EventTableViewCell.xib */; };
 		189A993A230CDDF5008E1096 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189A9939230CDDF5008E1096 /* CoreData.framework */; };
 		189F1A7D2302530A00568FDE /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189F1A7C2302530A00568FDE /* CalendarView.swift */; };
 		18AC73C92306B4D300AFB939 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC73C82306B4D300AFB939 /* Event.swift */; };
-		18C863C1230A33E500FBA551 /* MapsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C863C0230A33E500FBA551 /* MapsVC.swift */; };
-		18FDBA562314C43E005554C9 /* UpdateDetailsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FDBA552314C43E005554C9 /* UpdateDetailsManager.swift */; };
+		18C863C1230A33E500FBA551 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C863C0230A33E500FBA551 /* MapsViewController.swift */; };
+		18FDBA562314C43E005554C9 /* CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FDBA552314C43E005554C9 /* CustomUI.swift */; };
 		35E96A283C9091195CD4C850 /* Pods_Miagi_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EEF1B5A048E9598B368324 /* Pods_Miagi_Reminder.framework */; };
-		39E9B23A2312E5F10024154A /* NotificationManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E9B2392312E5F10024154A /* NotificationManageViewController.swift */; };
+		39E9B23A2312E5F10024154A /* NotificationManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E9B2392312E5F10024154A /* NotificationManage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,17 +58,17 @@
 		181C91FC23011BF2002B6B4A /* Miagi-ReminderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Miagi-ReminderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		181C920023011BF2002B6B4A /* Miagi_ReminderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miagi_ReminderUITests.swift; sourceTree = "<group>"; };
 		181C920223011BF2002B6B4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		181C9210230176FD002B6B4A /* NewEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventVC.swift; sourceTree = "<group>"; };
+		181C9210230176FD002B6B4A /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		186847E9230D26D600BE0F8C /* RealmEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmEvent.swift; sourceTree = "<group>"; };
-		1898D6DF2303C06D00A643D0 /* ListEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEvent.swift; sourceTree = "<group>"; };
-		1898D6E02303C06D00A643D0 /* ListEvent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListEvent.xib; sourceTree = "<group>"; };
+		1898D6DF2303C06D00A643D0 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		1898D6E02303C06D00A643D0 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
 		189A9939230CDDF5008E1096 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		189F1A7C2302530A00568FDE /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		18AC73C82306B4D300AFB939 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		18C863C0230A33E500FBA551 /* MapsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsVC.swift; sourceTree = "<group>"; };
-		18FDBA552314C43E005554C9 /* UpdateDetailsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetailsManager.swift; sourceTree = "<group>"; };
+		18C863C0230A33E500FBA551 /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
+		18FDBA552314C43E005554C9 /* CustomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUI.swift; sourceTree = "<group>"; };
 		1AEAFFAF4007C2ABA57B4928 /* Pods-Miagi-Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Miagi-Reminder.debug.xcconfig"; path = "Target Support Files/Pods-Miagi-Reminder/Pods-Miagi-Reminder.debug.xcconfig"; sourceTree = "<group>"; };
-		39E9B2392312E5F10024154A /* NotificationManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManageViewController.swift; sourceTree = "<group>"; };
+		39E9B2392312E5F10024154A /* NotificationManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManage.swift; sourceTree = "<group>"; };
 		7EF2F30C29E21533F50E85FD /* Pods-Miagi-Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Miagi-Reminder.release.xcconfig"; path = "Target Support Files/Pods-Miagi-Reminder/Pods-Miagi-Reminder.release.xcconfig"; sourceTree = "<group>"; };
 		A8EEF1B5A048E9598B368324 /* Pods_Miagi_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Miagi_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -127,7 +127,7 @@
 			children = (
 				181C91E023011BEF002B6B4A /* AppDelegate.swift */,
 				39E9B2382312E5C90024154A /* LocalNotification */,
-				1898D6DE2303C03100A643D0 /* Cell */,
+				1898D6DE2303C03100A643D0 /* TableViewCell */,
 				1896B07A23055FEE00E2FE23 /* Maps */,
 				18AC73C72306B4BB00AFB939 /* Models */,
 				186847E8230D26AE00BE0F8C /* ModelRealm */,
@@ -170,25 +170,25 @@
 		1896B07A23055FEE00E2FE23 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				18C863C0230A33E500FBA551 /* MapsVC.swift */,
+				18C863C0230A33E500FBA551 /* MapsViewController.swift */,
 			);
 			path = Maps;
 			sourceTree = "<group>";
 		};
-		1898D6DE2303C03100A643D0 /* Cell */ = {
+		1898D6DE2303C03100A643D0 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				1898D6DF2303C06D00A643D0 /* ListEvent.swift */,
-				1898D6E02303C06D00A643D0 /* ListEvent.xib */,
+				1898D6DF2303C06D00A643D0 /* EventTableViewCell.swift */,
+				1898D6E02303C06D00A643D0 /* EventTableViewCell.xib */,
 			);
-			path = Cell;
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		18A004E0230E702C00D23F9A /* Edit-Add-Details */ = {
 			isa = PBXGroup;
 			children = (
-				181C9210230176FD002B6B4A /* NewEventVC.swift */,
-				18FDBA552314C43E005554C9 /* UpdateDetailsManager.swift */,
+				181C9210230176FD002B6B4A /* AddEventViewController.swift */,
+				18FDBA552314C43E005554C9 /* CustomUI.swift */,
 			);
 			path = "Edit-Add-Details";
 			sourceTree = "<group>";
@@ -213,7 +213,7 @@
 		39E9B2382312E5C90024154A /* LocalNotification */ = {
 			isa = PBXGroup;
 			children = (
-				39E9B2392312E5F10024154A /* NotificationManageViewController.swift */,
+				39E9B2392312E5F10024154A /* NotificationManage.swift */,
 			);
 			path = LocalNotification;
 			sourceTree = "<group>";
@@ -348,7 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1898D6E22303C06D00A643D0 /* ListEvent.xib in Resources */,
+				1898D6E22303C06D00A643D0 /* EventTableViewCell.xib in Resources */,
 				181C91EB23011BF2002B6B4A /* LaunchScreen.storyboard in Resources */,
 				181C91E823011BF2002B6B4A /* Assets.xcassets in Resources */,
 				181C91E623011BEF002B6B4A /* Main.storyboard in Resources */,
@@ -438,13 +438,13 @@
 				181C91E323011BEF002B6B4A /* ViewController.swift in Sources */,
 				181C91E123011BEF002B6B4A /* AppDelegate.swift in Sources */,
 				189F1A7D2302530A00568FDE /* CalendarView.swift in Sources */,
-				18C863C1230A33E500FBA551 /* MapsVC.swift in Sources */,
+				18C863C1230A33E500FBA551 /* MapsViewController.swift in Sources */,
 				18AC73C92306B4D300AFB939 /* Event.swift in Sources */,
-				18FDBA562314C43E005554C9 /* UpdateDetailsManager.swift in Sources */,
-				1898D6E12303C06D00A643D0 /* ListEvent.swift in Sources */,
-				39E9B23A2312E5F10024154A /* NotificationManageViewController.swift in Sources */,
+				18FDBA562314C43E005554C9 /* CustomUI.swift in Sources */,
+				1898D6E12303C06D00A643D0 /* EventTableViewCell.swift in Sources */,
+				39E9B23A2312E5F10024154A /* NotificationManage.swift in Sources */,
 				186847EA230D26D600BE0F8C /* RealmEvent.swift in Sources */,
-				181C9211230176FD002B6B4A /* NewEventVC.swift in Sources */,
+				181C9211230176FD002B6B4A /* AddEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

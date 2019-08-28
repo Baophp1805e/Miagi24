@@ -94,7 +94,7 @@ class CalendarView : UIView {
     var delegate: CalendarViewDelegate?
     var time: String?{
         didSet {
-            parentView?.selectedDateLabel.text = time
+            parentView?.dateLabel.text = time
         }}
     var parentView: ViewController?
     var event: Event!

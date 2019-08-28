@@ -17,14 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     let center = UNUserNotificationCenter.current()
-    //    var event: Event?
-    //    var realm: RealmEvent!
-    var addEvent: NewEventVC!
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyBuLpjDqcqLnAcpI8wqL56l6Ytj6z0PpG4")
         GMSPlacesClient.provideAPIKey("AIzaSyBuLpjDqcqLnAcpI8wqL56l6Ytj6z0PpG4")
-        //        center.delegate = self
         let defaults = UserDefaults.standard
         
         if defaults.object(forKey: "SwitchState") != nil {
