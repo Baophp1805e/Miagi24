@@ -1,0 +1,6 @@
+framework module Pods_Miagi_Reminder {
+  umbrella header "Pods-Miagi-Reminder-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -40,7 +40,7 @@ class AddEventViewController: UIViewController, UITextFieldDelegate, CLLocationM
     @IBOutlet weak var timefromTextField: UITextField!
     var parrentVC: ViewController!
     var eventList:[Event] = []
-    var strCityMaps: String?
+//    var strCityMaps: String?
     @IBOutlet weak var cityLabel: UILabel!
     private var datePicker: UIDatePicker!
     @IBOutlet weak var errorLabel: UILabel!
@@ -156,7 +156,6 @@ class AddEventViewController: UIViewController, UITextFieldDelegate, CLLocationM
         googleMaps?.delegate = self
         googleMaps?.isMyLocationEnabled = true
         googleMaps?.settings.myLocationButton = true
-        
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
@@ -181,7 +180,7 @@ class AddEventViewController: UIViewController, UITextFieldDelegate, CLLocationM
         case .orderedAscending:
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "viewParrent") as! ViewController
-            if let e = eventEdit {
+            if let eventEdit = eventEdit {
                 realmUpdate()
             } else {
                 realmAdd()
@@ -253,16 +252,22 @@ class AddEventViewController: UIViewController, UITextFieldDelegate, CLLocationM
         if let eventEdit = eventEdit {
             titleTextField?.text = eventEdit.title
             describeTextField?.text = eventEdit.describe
-            cityLabel?.text = eventEdit.city
             timefromTextField?.text = eventEdit.timeFrom
             timetoTextField?.text = eventEdit.timeTo
             self.title = "Update Event"
         } else if let eventDetails = eventDetails {
             titleTextField?.text = eventDetails.title
             describeTextField?.text = eventDetails.describe
-            cityLabel?.text = eventDetails.city
+            cityLabel?.text  = eventDetails.city!
             timefromTextField?.text = eventDetails.timeFrom
             timetoTextField?.text = eventDetails.timeTo
+            titleTextField?.isEnabled = false
+            describeTextField?.isEnabled = false
+            timefromTextField?.isEnabled = false
+            timetoTextField?.isEnabled = false
+            switch1.isEnabled = false
+            switch2.isEnabled = false
+            googleMaps?.isHidden = true
             saveBarButton.isEnabled = false
             saveBarButton.tintColor = UIColor.clear
             self.title = "Details Event"
