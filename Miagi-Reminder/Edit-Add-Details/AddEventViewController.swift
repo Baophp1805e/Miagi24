@@ -180,7 +180,7 @@ class AddEventViewController: UIViewController, UITextFieldDelegate, CLLocationM
         case .orderedAscending:
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "viewParrent") as! ViewController
-            if let eventEdit = eventEdit {
+            if let event = eventEdit {
                 realmUpdate()
             } else {
                 realmAdd()
@@ -318,16 +318,7 @@ class AddEventViewController: UIViewController, UITextFieldDelegate, CLLocationM
         
         return false
     }
-    
-//    func customLable() {
-//        titleLabel.makeRoundedLable(radius: 20)
-//        describeLabel.makeRoundedLable(radius: 20)
-//        timeToLabel.makeRoundedLable(radius: 20)
-//        timeFromLabel.makeRoundedLable(radius: 20)
-//        informLabel.makeRoundedLable(radius: 20)
-//        beforeinformLabel.makeRoundedLable(radius: 20)
-//        namecityLabel.makeRoundedLable(radius: 20)
-//    }
+
     
     func customTextField() {
         titleTextField.customBorder(radius: 20)
